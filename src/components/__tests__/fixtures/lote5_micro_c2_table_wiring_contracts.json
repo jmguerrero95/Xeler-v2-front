@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "total": 30,
+  "modes": {
+    "read_only": 6,
+    "update": 23,
+    "show": 1
+  },
+  "contracts": [
+    {
+      "matrix_row_id": "E2E-00175",
+      "screen": "ActivitiesView",
+      "component": "views/admin/activities/ActivitiesView.vue",
+      "mode": "read_only",
+      "event": "",
+      "handler": "",
+      "source_element": "TableComponentVue#1@views/admin/activities/ActivitiesView.vue:L5"
+    },
+    {
+      "matrix_row_id": "E2E-00206",
+      "screen": "BanksView",
+      "component": "views/admin/configurations/banks/BanksView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/banks/BanksView.vue:L16"
+    },
+    {
+      "matrix_row_id": "E2E-00208",
+      "screen": "BankAccountCompanyView",
+      "component": "views/admin/configurations/CompanyAccounts/Bank/BankAccountCompanyView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/CompanyAccounts/Bank/BankAccountCompanyView.vue:L12"
+    },
+    {
+      "matrix_row_id": "E2E-00210",
+      "screen": "EfectyAccountCompanyView",
+      "component": "views/admin/configurations/CompanyAccounts/Efecty/EfectyAccountCompanyView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/CompanyAccounts/Efecty/EfectyAccountCompanyView.vue:L12"
+    },
+    {
+      "matrix_row_id": "E2E-00212",
+      "screen": "ExternalDeposit",
+      "component": "views/admin/configurations/CompanyAccounts/ExternalDeposit/ExternalDeposit.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/CompanyAccounts/ExternalDeposit/ExternalDeposit.vue:L12"
+    },
+    {
+      "matrix_row_id": "E2E-00214",
+      "screen": "OtherAccountCompanyView",
+      "component": "views/admin/configurations/CompanyAccounts/Other/OtherAccountCompanyView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/CompanyAccounts/Other/OtherAccountCompanyView.vue:L15"
+    },
+    {
+      "matrix_row_id": "E2E-00216",
+      "screen": "CountryView",
+      "component": "views/admin/configurations/countries/CountryView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/countries/CountryView.vue:L13"
+    },
+    {
+      "matrix_row_id": "E2E-00218",
+      "screen": "CurrencyView",
+      "component": "views/admin/configurations/currencies/CurrencyView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/currencies/CurrencyView.vue:L17"
+    },
+    {
+      "matrix_row_id": "E2E-00220",
+      "screen": "CurrencyTypeView",
+      "component": "views/admin/configurations/CurrencyType/CurrencyTypeView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/CurrencyType/CurrencyTypeView.vue:L12"
+    },
+    {
+      "matrix_row_id": "E2E-00222",
+      "screen": "DepartamentsView",
+      "component": "views/admin/configurations/departaments/DepartamentsView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/departaments/DepartamentsView.vue:L13"
+    },
+    {
+      "matrix_row_id": "E2E-00224",
+      "screen": "CategoriesFaqView",
+      "component": "views/admin/configurations/Faq/CategoriesFaqView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/Faq/CategoriesFaqView.vue:L10"
+    },
+    {
+      "matrix_row_id": "E2E-00226",
+      "screen": "FaqView",
+      "component": "views/admin/configurations/Faq/FaqView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/Faq/FaqView.vue:L10"
+    },
+    {
+      "matrix_row_id": "E2E-00234",
+      "screen": "MunicipalitiesView",
+      "component": "views/admin/configurations/municipalities/MunicipalitiesView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/municipalities/MunicipalitiesView.vue:L13"
+    },
+    {
+      "matrix_row_id": "E2E-00236",
+      "screen": "NetworkTypeView",
+      "component": "views/admin/configurations/NetworkType/NetworkTypeView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/NetworkType/NetworkTypeView.vue:L17"
+    },
+    {
+      "matrix_row_id": "E2E-00238",
+      "screen": "OtherPaymentsView",
+      "component": "views/admin/configurations/OtherPayments/OtherPaymentsView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/OtherPayments/OtherPaymentsView.vue:L12"
+    },
+    {
+      "matrix_row_id": "E2E-00240",
+      "screen": "PaymentMethodView",
+      "component": "views/admin/configurations/PaymentMethod/PaymentMethodView.vue",
+      "mode": "read_only",
+      "event": "",
+      "handler": "",
+      "source_element": "TableComponentVue#2@views/admin/configurations/PaymentMethod/PaymentMethodView.vue:L10"
+    },
+    {
+      "matrix_row_id": "E2E-00241",
+      "screen": "PenaltyTypeView",
+      "component": "views/admin/configurations/PenaltyTypes/PenaltyTypeView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#1@views/admin/configurations/PenaltyTypes/PenaltyTypeView.vue:L9"
+    },
+    {
+      "matrix_row_id": "E2E-00243",
+      "screen": "PlatformView",
+      "component": "views/admin/configurations/platforms/PlatformView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/platforms/PlatformView.vue:L17"
+    },
+    {
+      "matrix_row_id": "E2E-00245",
+      "screen": "ShippingTypeView",
+      "component": "views/admin/configurations/ShippingTypes/ShippingTypeView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/ShippingTypes/ShippingTypeView.vue:L12"
+    },
+    {
+      "matrix_row_id": "E2E-00247",
+      "screen": "TypeDocumentsView",
+      "component": "views/admin/configurations/type-documents/TypeDocumentsView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/type-documents/TypeDocumentsView.vue:L18"
+    },
+    {
+      "matrix_row_id": "E2E-00249",
+      "screen": "TypeBankAccountView",
+      "component": "views/admin/configurations/TypeBankAccount/TypeBankAccountView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/TypeBankAccount/TypeBankAccountView.vue:L12"
+    },
+    {
+      "matrix_row_id": "E2E-00251",
+      "screen": "WalletView",
+      "component": "views/admin/configurations/wallet/WalletView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/configurations/wallet/WalletView.vue:L17"
+    },
+    {
+      "matrix_row_id": "E2E-00470",
+      "screen": "PermissionsView",
+      "component": "views/admin/security/permissions/PermissionsView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/admin/security/permissions/PermissionsView.vue:L20"
+    },
+    {
+      "matrix_row_id": "E2E-00525",
+      "screen": "ActivityDetailUser",
+      "component": "views/admin/users/DetailUser/ActivityDetailUser.vue",
+      "mode": "read_only",
+      "event": "",
+      "handler": "",
+      "source_element": "TableComponentVue#1@views/admin/users/DetailUser/ActivityDetailUser.vue:L5"
+    },
+    {
+      "matrix_row_id": "E2E-00628",
+      "screen": "EfectyAccountCompanyView",
+      "component": "views/user/Accounts/Efecty/EfectyAccountCompanyView.vue",
+      "mode": "read_only",
+      "event": "",
+      "handler": "",
+      "source_element": "TableComponentVue#1@views/user/Accounts/Efecty/EfectyAccountCompanyView.vue:L12"
+    },
+    {
+      "matrix_row_id": "E2E-00630",
+      "screen": "OtherAccountView",
+      "component": "views/user/Accounts/Other/OtherAccountView.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/user/Accounts/Other/OtherAccountView.vue:L16"
+    },
+    {
+      "matrix_row_id": "E2E-00645",
+      "screen": "IndexComponent",
+      "component": "views/user/Bussiness/IndexComponent.vue",
+      "mode": "update",
+      "event": "update",
+      "handler": "openUpdate",
+      "source_element": "TableComponentVue#2@views/user/Bussiness/IndexComponent.vue:L13"
+    },
+    {
+      "matrix_row_id": "E2E-00699",
+      "screen": "UserReferredView",
+      "component": "views/user/Refer/UserReferredView.vue",
+      "mode": "read_only",
+      "event": "",
+      "handler": "",
+      "source_element": "TableComponent#1@views/user/Refer/UserReferredView.vue:L33"
+    },
+    {
+      "matrix_row_id": "E2E-00700",
+      "screen": "UsersReferredList",
+      "component": "views/user/Refer/UsersReferredList.vue",
+      "mode": "read_only",
+      "event": "",
+      "handler": "",
+      "source_element": "TableComponentVue#1@views/user/Refer/UsersReferredList.vue:L26"
+    },
+    {
+      "matrix_row_id": "E2E-00701",
+      "screen": "TransactionsView",
+      "component": "views/user/transactions/TransactionsView.vue",
+      "mode": "show",
+      "event": "show",
+      "handler": "clickInShow",
+      "source_element": "TableComponentVue#1@views/user/transactions/TransactionsView.vue:L10"
+    }
+  ]
+}

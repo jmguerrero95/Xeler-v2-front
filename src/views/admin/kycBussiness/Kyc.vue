@@ -1,0 +1,31 @@
+<template>
+  <section><div class="d-flex justify-space-between"><h2 class="text-primary mb-4">Solicitudes empresariales</h2><VSelect v-model="status" :items="statusFilterOptions" label="Estado" clearable class="status-filter" @update:model-value="applyStatus" /></div>
+    <VTable><thead><tr><th>ID</th><th>Empresa</th><th>Estado</th><th>Acciones</th></tr></thead><tbody><tr v-for="item in items" :key="item.id"><td>{{ item.id }}</td><td>{{ item.legal_name }}</td><td>{{ statusLabel(item.workflow_status) }}</td><td><VBtn size="small" variant="text" @click="openReview(item.id)">Revisar</VBtn></td></tr></tbody></VTable>
+    <div class="d-flex align-center justify-space-between mt-4">
+      <span class="text-body-2 text-medium-emphasis">Total: {{ total }}</span>
+      <div class="d-flex align-center ga-2">
+        <VBtn size="small" variant="text" :disabled="currentPage <= 1 || loading" @click="load(currentPage - 1)">Anterior</VBtn>
+        <span class="text-body-2">{{ currentPage }} / {{ lastPage }}</span>
+        <VBtn size="small" variant="text" :disabled="currentPage >= lastPage || loading" @click="load(currentPage + 1)">Siguiente</VBtn>
+      </div>
+    </div>
+    <VDialog :model-value="Boolean(selected)" max-width="900" @update:model-value="value => { if (!value) selected = null; }"><VCard v-if="selected" title="Revision KYB"><VCardText>
+      <VRow><VCol v-for="field in detailFields" :key="field.label" cols="12" md="6"><strong>{{ field.label }}:</strong> {{ field.value || "No registrado" }}</VCol></VRow>
+      <h3 class="text-primary mt-5">Beneficiarios finales</h3><VTable density="compact"><thead><tr><th>Nombre</th><th>Tipo documento</th><th>Pais</th><th>Participacion</th><th>Controlador</th></tr></thead><tbody><tr v-for="owner in selected.beneficial_owners" :key="owner.id"><td>{{ owner.full_name }}</td><td>{{ owner.document_type }}</td><td>{{ owner.country }}</td><td>{{ owner.ownership_percentage ?? 0 }}%</td><td>{{ owner.is_controller ? "Si" : "No" }}</td></tr></tbody></VTable>
+      <h3 class="text-primary mt-5">Documentos</h3><div v-for="document in selected.documents" :key="document.public_reference ?? document.download_endpoint" class="d-flex align-center justify-space-between py-2"><span>{{ document.document_type }} · v{{ document.version }} · {{ statusLabel(document.status) }}</span><VBtn variant="outlined" size="small" @click="api.downloadDocument(document)">Descargar</VBtn></div>
+      <VTextarea v-if="availableActions.length" v-model="reason" label="Motivo administrativo" />
+    </VCardText><VCardActions class="flex-wrap"><VBtn v-for="action in availableActions" :key="action.value" @click="transition(action.value)">{{ action.title }}</VBtn><VBtn @click="selected = null">Cerrar</VBtn></VCardActions></VCard></VDialog>
+  </section>
+</template>
+<script setup lang="ts">
+import { useTwoFactorGuard } from "@/composables/useTwoFactorGuard";
+
+const { authorizeWithTwoFactor } = useTwoFactorGuard();
+
+import { useCompaniesApi } from "@/services/companiesApi"; import { statusLabel, statusOptions } from "@/utils/statusLabels"; import { computed, onMounted, ref } from "vue";
+const api = useCompaniesApi(); const items = ref<any[]>([]); const selected = ref<any>(null); const reason = ref(""); const status = ref<string | null>(null); const currentPage = ref(1); const lastPage = ref(1); const total = ref(0); const loading = ref(false); const statuses = ["submitted", "under_review", "needs_correction", "approved", "rejected", "suspended"];
+const statusFilterOptions = statusOptions(statuses);
+const actionMap: Record<string, Array<{ title: string; value: string }>> = { submitted: [{ title: "Tomar revision", value: "start_review" }], needs_correction: [{ title: "Tomar revision", value: "start_review" }], under_review: [{ title: "Solicitar correccion", value: "needs_correction" }, { title: "Aprobar", value: "approve" }, { title: "Rechazar", value: "reject" }], approved: [{ title: "Suspender", value: "suspend" }] };
+const availableActions = computed(() => actionMap[selected.value?.workflow_status] ?? []); const detailFields = computed(() => [{ label: "Razon social", value: selected.value?.legal_name }, { label: "Nombre comercial", value: selected.value?.trade_name }, { label: "Identificacion tributaria", value: selected.value?.tax_id_masked }, { label: "Pais", value: selected.value?.country_name ?? selected.value?.country_id }, { label: "Tipo legal", value: selected.value?.legal_type }, { label: "Constitucion", value: selected.value?.incorporation_date }, { label: "Direccion", value: selected.value?.registered_address }, { label: "Ciudad", value: selected.value?.city }, { label: "Telefono", value: selected.value?.phone }, { label: "Correo", value: selected.value?.email }, { label: "Actividad economica", value: selected.value?.economic_activity }, { label: "Origen de fondos", value: selected.value?.source_of_funds }, { label: "Propietario", value: selected.value?.owner?.display_name ?? selected.value?.owner?.username }, { label: "Representante", value: selected.value?.representative?.display_name ?? selected.value?.representative?.username ?? selected.value?.representative_user_id }, { label: "Estado empresa", value: selected.value?.workflow_status }, { label: "Estado KYB", value: selected.value?.kyb_status }, { label: "Motivo de correccion", value: selected.value?.correction_reason }]);
+const load = async (page = currentPage.value) => { loading.value = true; try { const result = await api.adminList(status.value ?? undefined, page); items.value = result.items; currentPage.value = Number(result.meta.current_page ?? page); lastPage.value = Math.max(1, Number(result.meta.last_page ?? 1)); total.value = Number(result.meta.total ?? items.value.length); } finally { loading.value = false; } }; const applyStatus = async () => { currentPage.value = 1; await load(1); }; const openReview = async (id: number) => { selected.value = await api.adminShow(id); reason.value = ""; }; const transition = async (action: string) => { if (!selected.value) return; await authorizeWithTwoFactor(api.transition.bind(api, selected.value.id, action, reason.value || undefined), "admin.security"); selected.value = null; reason.value = ""; await load(); }; onMounted(load);
+</script><style scoped>.status-filter { max-width: 260px; }</style>

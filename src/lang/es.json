@@ -1,0 +1,379 @@
+{
+  "hello": "mundo",
+  "views": {
+    "404": {
+      "title": "404 No encontrado"
+    },
+    "login": {
+      "title": "Iniciar Sesión",
+      "button": "Iniciar Sesión",
+      "you-have-a-account": "¿Tienes ya una cuenta?",
+      "you-donnot-have-an-account": "¿No tienes una cuenta?",
+      "register": "Regístrate"
+    },
+    "users": {
+      "user": "Usuario",
+      "email": "Correo Electrónico",
+      "estate-verification": "Estado de Verificación",
+      "referred-by": "Referido Por",
+      "created_at": "Fecha de Ingreso",
+      "first_name": "Primer Nombre",
+      "second_name": "Segundo Nombre",
+      "last_name": "Apellido",
+      "second_last_name": "Segundo Apellido",
+      "password": "Contraseña",
+      "code_phone": "Código de telefono",
+      "phone": "Teléfono",
+      "username": "Usuario",
+      "referred_by": "Referido por",
+      "document": "Documento",
+      "address": "Dirección",
+      "birth": "Fecha de Nacimiento",
+      "title": "Usuario | Usuarios",
+      "password-confirmation": "Confirmar Contraseña",
+      "nationality": "Nacionalidad",
+      "nationalities": {
+        "title": "Nacionalidad"
+      },
+      "activity": "Actividad",
+      "referreds": "Referidos"
+    },
+    "permissions": {
+      "guard_name": "Guard Name",
+      "title": "Permiso | Permisos"
+    },
+    "roles": {
+      "title": "Rol | Roles"
+    },
+    "countries": {
+      "title": "País | Países"
+    },
+    "type_documents": {
+      "title": "Tipo de Documento | Tipos de Documentos"
+    },
+    "departments": {
+      "title": "Departamento | Departamentos"
+    },
+    "municipalities": {
+      "title": "Municipio | Municipios"
+    },
+    "departaments": {
+      "title": "Departamento | Departamentos"
+    },
+    "configurations": {
+      "title": "Configuración | Configuraciones",
+      "tabs": {
+        "general-configs": "Configuraciones Generales",
+        "finanncing": "Finanzas",
+        "company-account": {
+          "title": "Cuentas de Compañia"
+        },
+        "ubication": "Ubicaciones"
+      }
+    },
+    "banks": {
+      "title": "Banco | Bancos"
+    },
+    "register": {
+      "you-have-an-account": " ¿Ya tienes cuenta?",
+      "login": "Iniciar Sesión",
+      "button": "Crear Cuenta",
+      "success": "Registro Exitoso",
+      "title": "Registrate",
+      "step-one": {
+        "personal-data": "Datos Personales",
+        "ubication-data": "Ubicación",
+        "contact-data": "Datos de contacto",
+        "account-data": "Datos de la cuenta",
+        "general-data": "Datos Generales"
+      },
+      "first_name": "Primer nombre",
+      "second_name": "Segundo Nombre",
+      "lastname": "Apellido",
+      "second_lastname": "Segundo Apellido",
+      "address": "Dirección",
+      "email": "Correo Electrónico",
+      "code_phone": "Código de Telefono",
+      "phone": "Teléfono",
+      "referred_by": "Referido por",
+      "username": "Usuario",
+      "password": "Contraseña",
+      "password_confirmation": "Confirmar Contraseña",
+      "birth": "Fecha de nacimiento",
+      "accept-terms-and-conditions": "Acepto los <a class=\"font-weight-bold text-primary\">términos y condiciones</a>"
+    },
+    "unauthorized": {
+      "title": "Sin autorización"
+    },
+    "profile": {
+      "title": "Perfil | Perfiles",
+      "personal-data": {
+        "title": "Datos Personales",
+        "name": "Nombre",
+        "second-name": "Segundo Nombre",
+        "lastname": "Apellido",
+        "second-lastname": "Segundo Apellido",
+        "email": "Correo Electrónico",
+        "phone": "Teléfono celular",
+        "document": "Nro. Documento",
+        "birthday": "Fecha de nacimiento",
+        "address": "dirección de residencia",
+        "validation-phone": {
+          "title": "Validación de telefono",
+          "code-verification": "Código de verificación",
+          "content": "Cuando recibas el código de verificación, puedes continuar",
+          "success": "Verificación Exitosa"
+        },
+        "validation-email": {
+          "title": "Validacion de Correo"
+        }
+      },
+      "kyc": {
+        "title": "Kyc",
+        "verification-identity": "Verificación de Identidad",
+        "title-intructions": "Para evitar retrasos al verificar su cuenta, asegurate de :",
+        "upload-documents": "Carga los documentos como se indica a continuación",
+        "instructions": {
+          "one": "El documento debe estar en buen estado y claramente visible",
+          "two": "Asegúrate de que no haya destellos de luz en la documentación.",
+          "three": "Formatos de imagen soportados:"
+        },
+        "checkbox": {
+          "all-information": "Toda la información personal es correcta",
+          "terms-and-conditions": "He leído los <a href=\"#\" class=\"text-primary font-weight-bold\">términos y condiciones</a>, y la <a href=\"#\" class=\"text-primary font-weight-bold\">política de tratamiento de datos personales</a>"
+        },
+        "warning": {
+          "failed-type-document": "Actualiza la información del tipo de documento",
+          "failed-document": "Actualiza el número de documento",
+          "failed-country": "Actualiza el país",
+          "failed-nationality": "Actualiza la nacionalidad"
+        },
+        "alert-verification": {
+          "in-verification": "Tus documentos estan en verificación",
+          "reject": "Tu verificación ha sido rechazada",
+          "accept": "Tu verificación ha sido exitosa"
+        }
+      }
+    },
+    "nationalityi": {
+      "title": "Nacionalidad"
+    },
+    "admin": {
+      "kyc": {
+        "title": "Kyc",
+        "show": {
+          "title": "Información KYC de <span class=\"text-sky\">{fullname}</span>"
+        },
+        "geolocation": "Geolocalización",
+        "check-list": "Lista de Checkeo",
+        "last-check": "Último chequeo",
+        "deplucity-sistem": "Duplicidad en sistema",
+        "selfie": "Selfie",
+        "front": "Frente",
+        "back": "Reverso"
+      }
+    },
+    "currencies": {
+      "title": "Moneda | Monedas",
+      "abbreviation": "Abreviación",
+      "symbol": "Símbolo",
+      "buy": "Compra",
+      "sale": "Venta",
+      "reference": "Referencia del sistema",
+      "wallet-default": "Crear wallet por default",
+      "image": "Ícono"
+    },
+    "type-company-account": {
+      "title": "Método de Pago | Métodos de Pago"
+    },
+    "type-bank-account": {
+      "title": "Tipo de Cuenta | Tipos de Cuentas"
+    },
+    "categories-faq": {
+      "title": "Categoría Faq | Categorías Faq"
+    },
+    "faq": {
+      "title": "Faq"
+    },
+    "company-accounts": {
+      "bank": {
+        "title": "Cuenta Bancaria | Cuentas Bancarias",
+        "account-number": "Número de Cuenta",
+        "beneficiary": "Beneficiario",
+        "identification-document": "Documento de Identidad",
+        "limit": "Límite",
+        "recommendation": "Recomendación",
+        "coordinate": "Coordenadas"
+      },
+      "efecty": {
+        "title": "Ubicacion | Ubicaciones",
+        "link": "link",
+        "location": "Ubicación"
+      },
+      "other": {
+        "title": "Otra Cuenta | Otras Cuentas"
+      }
+    },
+    "home": {
+      "calculator": {
+        "title": "Calcula tu transancción"
+      },
+      "dashboard": "Dashboard"
+    },
+    "currency-types": {
+      "title": "Tipo de Moneda | Tipos de Monedas"
+    },
+    "wallets": {
+      "address": "Billetera",
+      "title": "Billetera | Billeteras",
+      "alias": "Alias"
+    },
+    "shipping-types": {
+      "title": "Tipo de envío | Tipos de envíos"
+    },
+    "buy": {
+      "title": "Compra Rápida",
+      "payment-method": "Método de Pago",
+      "amount": "Monto a comprar",
+      "select-wallet": {
+        "title": "Selecciona una de tus Direcciones",
+        "content": "Asegúrate de seleccionar la dirección correcta y compatible con la red escogida, cualquier dirección errada puede causar pérdidas  irreversibles"
+      }
+    },
+    "order": {
+      "address": "Dirección de destino"
+    },
+    "menu-right": {
+      "preview-order": {
+        "title": "Resumen de tu Orden"
+      }
+    },
+    "transactions": {
+      "title": "Transacción | Transacciones",
+      "txn_no": "Txn No",
+      "local_currency": "Pesos",
+      "reference_currency": "USD",
+      "crypto_currency": "Crypto",
+      "wallet": "Dirección"
+    },
+    "user": {
+      "resend-verification": "Reenviar Verificación",
+      "send-sms": "Enviar SMS",
+      "start-chat": "Iniciar Chat",
+      "send-email": "Enviar Mensaje"
+    },
+    "other-payments": {
+      "title": "Otro Pago | Otros Pagos"
+    },
+    "penalties-types": {
+      "title": "Tipo Penalización | Tipos de Penalizaciones"
+    },
+    "network-type": {
+      "title": "Tipo de Red | Tipos de Redes"
+    },
+    "sell": {
+      "title": "Vender",
+      "payment-method": "Forma de Pago",
+      "receiver-method": "Forma de Pago",
+      "amount": "Monto a Vender"
+    },
+    "accounts": {
+      "title": "Cuenta | Cuentas"
+    },
+    "refer": {
+      "title": "Referido | Referidos"
+    },
+    "platforms": {
+      "title": "Plataforma|Plataformas"
+    }
+  },
+  "genereal-views": {
+    "state": "Estado"
+  },
+  "buttons": {
+    "create": "Crear",
+    "update": "Actualizar",
+    "cancel": "Cancelar",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "add": "Agregar"
+  },
+  "commons": {
+    "show-title-modal": "Ver {singular}",
+    "update-title-modal": "Actualizar {singular}",
+    "create-title-modal": "Crear {singular}",
+    "update-successfull": "Actualizado Correctamente",
+    "update": "Actualizar",
+    "verificate": "Verificar",
+    "send": "Enviar",
+    "invalid-format": "Formato Inválido",
+    "system-error": "Error de Sistema, por favor contacte con un administrador",
+    "message-success": "{message} enviado Exitosamente"
+  },
+  "general-views": {
+    "state": "Estado",
+    "name": "Nombre",
+    "actions": "Acciones",
+    "restore": {
+      "title": "Restaurar",
+      "content": "¿Estás seguro de restaurar?"
+    },
+    "delete": {
+      "title": "Eliminar",
+      "content": "¿Estás seguro de eliminar?"
+    },
+    "update": "Actualizar",
+    "accept": {
+      "content": "¿Estás seguro de aceptar?",
+      "message": "Se ha aceptado correctamente",
+      "title": "Aceptar"
+    },
+    "reject": {
+      "content": "¿Estás seguro de rechazar?",
+      "message": "Se ha rechazado correctamente"
+    },
+    "code": "Código",
+    "search": "Buscar",
+    "description": "Descripción",
+    "next": "Siguiente",
+    "back": "Atrás",
+    "come-back": "Regresar",
+    "goin-dashboard": "Ir al inicio",
+    "status": "Estado",
+    "id": "Id",
+    "body": "Cuerpo",
+    "title": "Título",
+    "show": "Ver",
+    "edit": "Editar",
+    "delete-icon": "Eliminar",
+    "accept-icon": "Aceptar",
+    "reject-icon": "Rechazar",
+    "color": "Color",
+    "image": "Imagen",
+    "continue": "Continuar",
+    "date": "Fecha",
+    "time": "Tiempo (minutos)"
+  },
+  "general-messages": {
+    "editedSuccessfully": "Actualizado correctament",
+    "createdSuccessfully": "Creado Correctamente",
+    "restoredSuccessfully": "Restaurado correctamente",
+    "deletedSuccessfully": "Eliminado correctamente"
+  },
+  "header": {
+    "log-out": "Cerrar Sesión",
+    "hi": "Hola!"
+  },
+  "menu-right": {
+    "complete-your-kyc": "Completa tu verificación",
+    "kyc": "KYC"
+  },
+  "sidebar": {
+    "user": {
+      "buy": "Comprar",
+      "sell": "Vender",
+      "transactions": "Transacciones",
+      "referred": "Referidos"
+    }
+  }
+}

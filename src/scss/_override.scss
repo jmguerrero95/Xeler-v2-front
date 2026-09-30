@@ -1,0 +1,248 @@
+@use "./variables" as *;
+
+html {
+  --v-font-family: ProximaNova, "DM Sans", sans-serif;
+
+  body{
+    font-family: $font-family !important;
+    background-color: #F8F9FA;
+    // @media (max-width: 960px) {
+    //   background-color: #F8F9FA;
+    // }
+    // @media (min-width: 961px) {
+    //   background-color: #000000;
+    // }
+  }
+  font-family: $font-family!important;
+
+  .v-application {
+    [class*="text-"] {
+      font-family: $font-family, sans-serif !important;
+    }
+    font-family: $font-family, sans-serif !important;
+  }
+
+  .bg-light-primary {
+    background-color: #fcf1ed !important;
+  }
+
+  // .elevation-10 {
+  //   box-shadow: $box-shadow !important;
+  // }
+  //.v-card-text {
+  //  padding: 30px;
+  //}
+  .v-card-header {
+    padding: 30px 30px 0.625rem;
+  }
+  .v-card-actions {
+    padding: 0.625rem 30px 30px;
+  }
+  .v-card {
+    border-radius: $border-radius;
+    width: 100%;
+  }
+  .v-btn {
+    text-transform: capitalize;
+    letter-spacing: $btn-letter-spacing;
+  }
+  .v-btn.bg-primary {
+    color: rgb(var(--v-theme-on-primary)) !important;
+  }
+  .v-btn-group .v-btn {
+    height: inherit !important;
+  }
+
+  .v-navigation-drawer__scrim.fade-transition-leave-to {
+    display: none;
+  }
+
+  .theme-carousel .v-carousel__progress {
+    position: absolute;
+  }
+  .v-theme--light,
+  .v-theme--dark {
+    --v-theme-on-primary: 255, 255, 255;
+    --v-theme-on-warning: 255, 255, 255;
+  }
+  .v-card.w-auto {
+    width: auto !important;
+  }
+}
+
+.font-15 {
+  font-size: 15px!important;
+}
+.font-16 {
+  font-size: 16px!important;
+}
+.font-22 {
+  font-size: 22px!important;
+}
+.font-25 {
+  font-size: 25px!important;
+}
+.font-30 {
+  font-size: 30px!important;
+}
+.font-44{
+  font-size: 44px!important;
+}
+.font-50{
+  font-size: 50px!important;
+}
+.font-8{
+  font-size: 8px!important;
+}
+
+.alertError {
+  background-color: #ef5da84d;
+}
+
+.hover-black:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.custom-border-primary{
+  border-color: $color-primary!important;
+}
+
+.hashtag {
+  font-family: "DM Sans";
+}
+
+.font-proxima {
+  font-family: $font-family !important;
+}
+
+.font-hand{
+  font-family: 'Schoolbell';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+
+.border-primary {
+  border: 1px solid;
+  border-color: $color-primary;
+}
+.rounded-10{
+  border-radius: 10px!important;
+  -webkit-border-radius: 10px!important;
+  -moz-border-radius: 10px!important;
+  -ms-border-radius: 10px!important;
+  -o-border-radius: 10px!important;
+}
+
+.bg-down {
+  background-color: #ff707033 !important;
+}
+
+.arrow-down {
+  color: #ff7070 !important;
+}
+
+.bg-same {
+  background-color: #d3c9c933 !important;
+}
+
+.arrow-same {
+  color: #3d3d3c !important;
+}
+
+.bg-up {
+  background-color: #95ff7033 !important;
+}
+
+.arrow-up {
+  color: #2b5517 !important;
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+.rotate-180 {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.rotate-270 {
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+}
+.rotate-45 {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+.font-weight-light{
+  font-weight: 600;
+}
+
+.line-height-15{
+  line-height: 15px!important;
+}
+// .v-menu > .v-overlay__content{
+//   border: 1px solid $color-primary!important;
+//   border-radius: 20px!important;
+//   -webkit-border-radius: 20px!important;
+//   -moz-border-radius: 20px!important;
+//   -ms-border-radius: 20px!important;
+//   -o-border-radius: 20px!important;
+// }
+
+.disabled {
+  user-select: none;
+  opacity: 50%;
+  pointer-events: none;
+}
+
+/* Autoridad visual compartida: overlays opacos, formularios legibles y modales coherentes. */
+.v-overlay-container .v-menu > .v-overlay__content,
+.v-overlay-container .v-select__content,
+.v-overlay-container .v-autocomplete__content {
+  background: rgb(var(--v-theme-surface)) !important;
+  color: rgb(var(--v-theme-on-surface)) !important;
+  border: 1px solid rgba(52, 64, 84, .24) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, .16) !important;
+  overflow: hidden;
+  z-index: 2400 !important;
+}
+
+.v-overlay-container .v-list { background: rgb(var(--v-theme-surface)) !important; }
+.v-overlay-container .v-list-item:hover { background: rgba(var(--v-theme-primary), .09) !important; }
+.v-overlay-container .v-list-item--active { background: rgba(var(--v-theme-primary), .15) !important; }
+.v-overlay-container .v-list-item--disabled { opacity: .62 !important; }
+
+.v-card, .global-modal-card { border-radius: 12px !important; }
+.v-field { border-radius: 8px !important; }
+.global-modal-close {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  border-radius: 50% !important;
+  color: rgb(var(--v-theme-primary)) !important;
+  background: rgb(var(--v-theme-surface)) !important;
+  border: 1px solid rgba(var(--v-theme-primary), .22) !important;
+}
+.global-modal-close:hover, .global-modal-close:focus-visible { background: rgba(var(--v-theme-primary), .10) !important; }
+
+.v-field input::placeholder, .v-field textarea::placeholder { color: #667085 !important; opacity: 1 !important; }
+.v-input--disabled { opacity: 1 !important; }
+.v-input--disabled .v-field, .v-field--disabled { background: #f2f4f7 !important; color: #475467 !important; opacity: 1 !important; }
+.v-input--disabled input, .v-input--disabled textarea, .v-field--disabled .v-field__input { color: #475467 !important; -webkit-text-fill-color: #475467 !important; opacity: 1 !important; }
+.v-label { color: #475467 !important; opacity: 1 !important; }

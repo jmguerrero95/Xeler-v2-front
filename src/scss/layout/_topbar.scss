@@ -1,0 +1,9 @@
+.verticalLayout {
+  .v-app-bar.v-toolbar.v-topbar {
+    margin-left: 265px;
+    width: calc(100% - 265px);
+  }
+}
+.v-topbar {
+  background-color: #ffffff !important;
+}

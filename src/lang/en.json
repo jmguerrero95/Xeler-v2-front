@@ -1,0 +1,380 @@
+{
+  "hello": "world",
+  "views": {
+    "404": {
+      "title": "404 not found"
+    },
+    "login": {
+      "title": "Sign In",
+      "button": "Sign In",
+      "you-have-a-account": "You have a account?",
+      "you-donnot-have-an-account": "You don't have an account?",
+      "register": "Sign Up"
+    },
+    "users": {
+      "user": "Username",
+      "email": "Email",
+      "estate-verification": "Verification Estate",
+      "referred-by": "Referred By",
+      "created_at": "Register Date",
+      "first_name": "First Name",
+      "second_name": "Second Name",
+      "last_name": "Last Name",
+      "second_last_name": "Second Lastname",
+      "password": "Password",
+      "code_phone": "Code Phone",
+      "phone": "Phone",
+      "username": "Username",
+      "referred_by": "Referred By",
+      "document": "Document",
+      "address": "Adress",
+      "birth": "Birthday",
+      "title": "User | Users",
+      "password-confirmation": "Password Confirmation",
+      "nationality": "Nationality",
+      "nationalities": {
+        "title": "Nacionality"
+      },
+      "activity": "Activity",
+      "referreds": "Referreds"
+    },
+    "permissions": {
+      "guard_name": "Guard Name",
+      "title": "Permission | Permissions"
+    },
+    "roles": {
+      "title": "Role | Roles"
+    },
+    "countries": {
+      "title": "Country | Countries"
+    },
+    "type_documents": {
+      "title": "Type Document | Type Documents"
+    },
+    "departments": {
+      "title": "Departament | Departaments"
+    },
+    "municipalities": {
+      "title": "Municipality | Municipalities"
+    },
+    "departaments": {
+      "title": "Departament  | Departaments"
+    },
+    "configurations": {
+      "title": "Configuration | Configurations",
+      "tabs": {
+        "general-configs": "General Configs",
+        "finanncing": "Finanncing",
+        "company-account": {
+          "title": "Company Account"
+        },
+        "ubication": "Ubications"
+      }
+    },
+    "banks": {
+      "title": "Bank | Banks"
+    },
+    "register": {
+      "you-have-an-account": "You have an account?",
+      "login": "Sign In",
+      "button": "Sign Up",
+      "success": "Register Succesfull",
+      "title": "Sign Up",
+      "step-one": {
+        "personal-data": "Personal Data",
+        "ubication-data": "Ubication",
+        "contact-data": "Contact Data",
+        "account-data": "Account data",
+        "general-data": "General Data"
+      },
+      "first_name": "First name",
+      "second_name": "Second Name",
+      "lastname": "Lastname",
+      "second_lastname": "Second lastname",
+      "address": "Address",
+      "email": "Email",
+      "code_phone": "Code Phone",
+      "phone": "Phone",
+      "referred_by": "Referred By",
+      "username": "Username",
+      "password": "Password",
+      "password_confirmation": "Password Confirmation",
+      "birth": "Birth",
+      "accept-terms-and-conditions": "I accept the <a class=\"font-weight-bold text-primary\">terms and  condictions </a>"
+    },
+    "unauthorized": {
+      "title": "Unauthorized"
+    },
+    "profile": {
+      "title": "Profile | Profiles",
+      "personal-data": {
+        "title": "Personal Data",
+        "name": "Name",
+        "second-name": "Second Name",
+        "lastname": "Lastname",
+        "second-lastname": "Second Lastname",
+        "email": "Email",
+        "phone": "Phone",
+        "document": "N. Document",
+        "birthday": "Birthday",
+        "address": "Address",
+        "validation-phone": {
+          "title": "Validation Phone",
+          "code-verification": "Verification code",
+          "content": "When your received the verification code, your can verificated",
+          "success": "Verificated Succesfull"
+        },
+        "validation-email": {
+          "title": "Validation Email"
+        }
+      },
+      "kyc": {
+        "title": "Kyc",
+        "verification-identity": "Verification Identity",
+        "upload-documents": "Upload documents, follow the next steps",
+        "title-intructions": "To avoid delays when checking your account, make sure:",
+        "instructions": {
+          "one": "The document must be in good condition and clearly visible",
+          "two": "Make sure there are no flashes of light in the documentation.",
+          "three": "Supported images formats"
+        },
+        "checkbox": {
+          "all-information": "All personal data is correct",
+          "terms-and-conditions": "I have read the <a href=\"#\" class=\"text-primary font-weight-bold\">terms and conditions</a>, and the <a href=\"#\" class=\"text-primary font-weight-bold\">personal data processing policy</a>"
+        },
+        "warning": {
+          "failed-type-document": "Update type document",
+          "failed-document": "Update document",
+          "failed-country": "Update country",
+          "failed-nationality": "Update nationality"
+        },
+        "alert-verification": {
+          "in-verification": "yours documents is in verification",
+          "reject": "Your verification is reject",
+          "accept": "Your verification is successfull"
+        }
+      }
+    },
+    "nationalityi": {
+      "title": "Nationality"
+    },
+    "admin": {
+      "kyc": {
+        "title": "Kyc",
+        "show": {
+          "title": "KYC information of <span class=\"text-sky\"> {fullname} </span>"
+        },
+        "geolocation": "Geolocation",
+        "check-list": "Check Lists",
+        "last-check": "Last Check",
+        "deplucity-sistem": "Duplicity System",
+        "login-valid": "SigIn Valid",
+        "selfie": "Selfie",
+        "front": "Front",
+        "back": "Back"
+      }
+    },
+    "currencies": {
+      "title": "Currency | Currencies",
+      "abbreviation": "Abbreviation",
+      "symbol": "Symbol",
+      "buy": "Buy",
+      "sale": "Sale",
+      "reference": "System Reference",
+      "wallet-default": "Create Wallet by Default",
+      "image": "Icon"
+    },
+    "type-company-account": {
+      "title": "Payment Method | Payment Methods"
+    },
+    "type-bank-account": {
+      "title": "Type Bank Account | Type Bank Accounts"
+    },
+    "categories-faq": {
+      "title": "Category Faq | Categories Faq"
+    },
+    "faq": {
+      "title": "Faq"
+    },
+    "company-accounts": {
+      "bank": {
+        "title": "Bank Account |  Bank Accounts",
+        "account-number": "Account Number",
+        "beneficiary": "Beneficiary",
+        "identification-document": "Identification Document",
+        "limit": "Limit",
+        "recommendation": "Recomendation",
+        "coordinate": "Coordinate"
+      },
+      "efecty": {
+        "title": "Ubication | Ubications",
+        "link": "Link",
+        "location": "Location"
+      },
+      "other": {
+        "title": "Other Account | Other Accounts"
+      }
+    },
+    "home": {
+      "calculator": {
+        "title": "Calculator Transactions"
+      },
+      "dashboard": "Dashboard"
+    },
+    "currency-types": {
+      "title": "Currency Type | Currency Types"
+    },
+    "wallets": {
+      "address": "Wallet",
+      "title": "Wallet | Wallets",
+      "alias": "Alias"
+    },
+    "shipping-types": {
+      "title": "Shipping Type | Shipping Types"
+    },
+    "buy": {
+      "title": "Flash Buy",
+      "payment-method": "Payment Method",
+      "amount": "Amount Buy",
+      "select-wallet": {
+        "title": "Select a wallet",
+        "content": "Be sure to select the correct address and compatible with the chosen network, any wrong address can cause irreversible losses."
+      }
+    },
+    "order": {
+      "address": "Address Send"
+    },
+    "menu-right": {
+      "preview-order": {
+        "title": "Order Resume"
+      }
+    },
+    "transactions": {
+      "title": "Transaction | Transactions",
+      "txn_no": "Txn No",
+      "local_currency": "Pesos",
+      "reference_currency": "USD",
+      "crypto_currency": "Crypto",
+      "wallet": "Wallet"
+    },
+    "user": {
+      "resend-verification": "Resend Verification",
+      "send-sms": "Send SMS",
+      "start-chat": "Start Chat",
+      "send-email": "Send Email"
+    },
+    "other-payments": {
+      "title": "Other Payment | Other Payments"
+    },
+    "penalties-types": {
+      "title": "Penalty Type | Penalty Types"
+    },
+    "network-type": {
+      "title": "Network Type | Network Types"
+    },
+    "sell": {
+      "title": "Sell",
+      "payment-method": "Payment Method",
+      "receiver-method": "Payment Method",
+      "amount": "Amount to Sell"
+    },
+    "accounts": {
+      "title": "Account | Accounts"
+    },
+    "refer": {
+      "title": "Refer | Refers"
+    },
+    "platforms": {
+      "title": "Platform|Platforms"
+    }
+  },
+  "genereal-views": {
+    "state": "State"
+  },
+  "buttons": {
+    "create": "Create",
+    "update": "Update",
+    "cancel": "Cancel",
+    "accept": "Accept",
+    "reject": "Reject",
+    "add": "Add"
+  },
+  "commons": {
+    "show-title-modal": "Show {singular}",
+    "update-title-modal": "Update {singular}",
+    "create-title-modal": "Create {singular}",
+    "update-successfull": "Update Successfull",
+    "update": "Update",
+    "verificate": "Verificate",
+    "send": "Send",
+    "invalid-format": "Invalid Format",
+    "system-error": "System Error, please contact a admin",
+    "message-success": "{message} send successfull"
+  },
+  "general-views": {
+    "state": "State",
+    "name": "Name",
+    "actions": "Actions",
+    "restore": {
+      "title": "Restore",
+      "content": "you sure of restore?"
+    },
+    "delete": {
+      "title": "Delete",
+      "content": "You sure of delete?"
+    },
+    "update": "Update",
+    "accept": {
+      "content": "You sure of accept?",
+      "message": "Accept successfull",
+      "title": "Confirm"
+    },
+    "reject": {
+      "content": "You sure of reject?",
+      "message": "Reject successfull"
+    },
+    "code": "Code",
+    "search": "Search",
+    "description": "Description",
+    "next": "Next",
+    "back": "Back",
+    "come-back": "Come Back",
+    "goin-dashboard": "Going to Dashboard",
+    "status": "Status",
+    "id": "Id",
+    "body": "Body",
+    "title": "Title",
+    "show": "Show",
+    "edit": "Edit",
+    "delete-icon": "Delete",
+    "accept-icon": "Accept",
+    "reject-icon": "Reject",
+    "color": "Color",
+    "image": "Image",
+    "continue": "Continue",
+    "date": "Date",
+    "time": "Time (minutes)"
+  },
+  "general-messages": {
+    "editedSuccessfully": "Update Successfull",
+    "createdSuccessfully": "Created Successfull",
+    "restoredSuccessfully": "Restore Successfull",
+    "deletedSuccessfully": "Deleted Successfull"
+  },
+  "header": {
+    "log-out": "Logout",
+    "hi": "Hi!"
+  },
+  "menu-right": {
+    "complete-your-kyc": "complete your verification",
+    "kyc": "KYC"
+  },
+  "sidebar": {
+    "user": {
+      "buy": "Buy",
+      "sell": "Sell",
+      "transactions": "Transactions",
+      "referred": "Referred"
+    }
+  }
+}

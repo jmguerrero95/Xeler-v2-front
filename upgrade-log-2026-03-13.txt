@@ -1,0 +1,213 @@
+﻿Upgrade Log - 2026-03-13
+Project: Xeler-go-Frontend
+
+Summary of work completed
+1) Global dependency upgrade to latest stable versions.
+2) Security cleanup of dependency tree.
+3) Targeted UI fix for sidebar icons after Vuetify upgrade.
+4) Validation runs for build and dev startup.
+
+Updated dependencies
+- vuetify: 3.12.3 -> 4.0.2
+- vue-router: 4.6.4 -> 5.0.3
+- eslint: 9.39.4 -> 10.0.3
+
+Removed dependency
+- @types/vue-tel-input (removed)
+Reason: package is obsolete for current vue-tel-input (which already provides its own types) and was introducing vulnerable transitive vue@2 in audit.
+
+Files changed
+- package.json
+- package-lock.json
+- src/layouts/full/sidebar/Sidebar.vue
+
+Code-level fix applied
+- Sidebar icon rendering fix:
+  In src/layouts/full/sidebar/Sidebar.vue, changed:
+  <VAvatar> -> <VAvatar variant="text">
+
+Why:
+- After Vuetify upgrade, default VAvatar variant rendered white circular backgrounds.
+- Sidebar icons are white, so they became visually hidden (white icon on white oval).
+- Using variant="text" keeps avatar background transparent and restores icon visibility.
+
+Validation executed
+- npm outdated --long
+  Result: no pending outdated packages.
+
+- npm audit
+  Result: 0 vulnerabilities.
+
+- npm run build
+  Result: SUCCESS on Vite 8 with updated dependency set.
+
+- npm run dev -- --host=127.0.0.1 --port=5174 --strictPort
+  Result: SUCCESS, dev server starts correctly.
+
+Notes
+- Existing strict typecheck errors are present in the project when running `npm run typecheck` (many are unrelated legacy typing/import issues). Build and dev run correctly.
+- No broad refactor was performed. Changes were kept minimal and focused on compatibility, security, and preserving visual behavior.
+
+Second pass - 2026-03-13
+Objective
+- Deep verification after full dependency upgrade, focusing on runtime stability and visual consistency.
+
+Critical fixes applied in second pass
+- Type/runtime infrastructure
+  - tsconfig.json: included root env.d.ts in TypeScript include list to restore Vite ambient typings (`ImportMeta.env`, static asset modules).
+
+- Layout/runtime correctness
+  - src/layouts/auth/authLayout.vue: replaced `ref(undefined || true)` with `ref(true)`.
+  - src/layouts/full/FullLayout.vue: replaced `ref(undefined || true)` with `ref(true)`.
+
+- Permissions typing conflict
+  - src/permissions.const.ts: removed duplicated interface/type declarations at file tail that caused `Duplicate identifier` errors.
+
+- Map coordinates strict typing
+  - src/components/LeafMap.vue: `coordinates` prop changed from `number[]` to tuple `[number, number]`.
+  - src/views/user/components/intercambio/PaymentMethods/EfectyComponent.vue:
+    - `center` typed as `[number, number]`.
+    - coordinate parsing now normalizes and assigns first two values safely.
+
+- Register location flow stability
+  - src/views/auth/Register/StepTwo.vue:
+    - switched from `UserStore` location fields (not present) to `useLocationStore`.
+    - wired `countries/departments/municipalities` via store refs.
+    - added mount+watch logic to fetch departments/municipalities and reset dependent selections.
+  - src/stores/BankStore.ts:
+    - switched to `useLocationStore` so exposed `countries/getCountries` remains valid.
+
+- VForm slot validity with current typings
+  - src/views/auth/Register.vue: `isValid.value` -> `isValid`.
+  - src/views/admin/configurations/Generals/ConfigurationGeneralView.vue: `isValid.value` -> `isValid`.
+
+- Minor callback typing fixes
+  - Added `res: any` annotations in:
+    - src/views/admin/users/DetailUser/ActivityDetailUser.vue
+    - src/views/auth/Login.vue
+    - src/views/auth/Register.vue
+    - src/views/user/Refer/UserReferredView.vue
+
+- Buy/Sell account selection typing cleanup
+  - src/views/user/Venta/ConfirmOrder/SelectWallet.vue: added missing `dialog` prop declaration.
+  - src/views/user/Venta/components/intercambio/PaymentMethods/SelectAccount.vue:
+    - normalized model to `number | null` and explicit conversion from select values.
+    - safe assignment for synthetic `attributes.name`.
+  - src/views/user/Venta/InitSell.vue:
+    - separated account selection refs (`accountDetailSelected` vs `efectyDetailSelected`).
+    - updated template bindings and continue logic accordingly.
+
+- Hover type compatibility
+  - Updated `getColorHover` signatures to accept `boolean | null | undefined` in both:
+    - src/views/user/components/intercambio/CryptoCurrencySelect.vue
+    - src/views/user/Venta/components/intercambio/CryptoCurrencySelect.vue
+
+- Vuetify item slot typing adaptation
+  - src/views/Home/PricingCards/CalculatorComponent.vue:
+    - replaced strict `item.raw` access with safe cast pattern `((item as any).raw as Currency)` for template compatibility.
+
+Validation results (second pass)
+- npm run typecheck: SUCCESS (0 errors)
+- npm run build: SUCCESS
+- npm run dev -- --host=127.0.0.1 --port=5174 --strictPort: SUCCESS
+- npm outdated --long: no pending updates
+- npm audit: 0 vulnerabilities
+
+Residual note
+- `npm run lint` still reports many pre-existing style/rule violations across the codebase (not introduced by this upgrade). They are outside runtime/build correctness and were not mass-refactored to avoid visual/behavioral risk.
+
+Hotfix - Runtime crash in Home calculator (2026-03-13)
+Issue reported
+- `CalculatorComponent.vue:126 Uncaught TypeError: Cannot read properties of undefined (reading 'relationships')`
+- Symptom: blank/partial page due unhandled template exception.
+
+Root cause
+- In Vuetify select slots, `item.raw` can be undefined during render transitions.
+- Template accessed `item.raw.relationships` directly.
+
+Fix applied
+- File: src/views/Home/PricingCards/CalculatorComponent.vue
+- Added safe extractor function `getRawCurrency(item)`.
+- Replaced all direct `item.raw` dereferences with safe optional access.
+- Added guarded click handler `selectCurrencyFromItem(item)`.
+
+Post-fix validation
+- npm run typecheck: SUCCESS
+- npm run build: SUCCESS
+
+Visual regression correction pass - 2026-03-14
+Issue reported
+- After Vuetify major upgrade, visual differences appeared (brand color drift, typography drift, low button text contrast).
+- Most visible in Home and some Dashboard sections.
+
+Root causes identified
+- `primary` theme color in `src/plugins/vuetify.ts` was set to `#000000`, conflicting with project design token `$color-primary: #5043E8`.
+- Vuetify components in v4 rely on `--v-font-family`; only body-level overrides were present.
+- Some primary buttons could inherit non-contrast text color depending on utility classes.
+
+Fixes applied (minimal, global-safe)
+- `src/plugins/vuetify.ts`
+  - `primary` restored to `#5043E8`.
+  - Added explicit contrast tokens: `on-primary: #FFFFFF`, `on-secondary: #FFFFFF`.
+  - Set `theme.defaultTheme = "light"` explicitly.
+
+- `src/scss/_override.scss`
+  - Added global Vuetify font variable:
+    - `--v-font-family: ProximaNova, "DM Sans", sans-serif;`
+  - Added contrast safeguard for primary buttons:
+    - `.v-btn.bg-primary { color: rgb(var(--v-theme-on-primary)) !important; }`
+  - Added explicit theme variable fallback:
+    - `--v-theme-on-primary: 255, 255, 255;`
+
+Validation executed
+- npm run typecheck -> SUCCESS
+- npm run build -> SUCCESS
+
+Notes
+- Fix scope intentionally limited to global theme/typography/contrast to avoid functional changes and preserve existing component structure.
+
+Security enhancement - Wallet operations 2FA guard (2026-03-15)
+Objective
+- Require 2FA (only when enabled) for wallet/account mutations: create, edit, delete, restore.
+- Keep login 2FA flow unchanged.
+- Provide reusable helper to apply same guard in other modules.
+
+Implementation
+1) New reusable helper
+- Added: src/composables/useTwoFactorGuard.ts
+- Exposes:
+  - hasTwoFactorEnabled()
+  - runWithTwoFactor(action)
+- Behavior:
+  - If 2FA disabled -> executes action directly.
+  - If 2FA enabled -> opens existing TwoFactor modal flow and executes action only after successful verification.
+
+2) Hardened 2FA verification flow
+- Updated: src/stores/TwoFactorAuthStore.ts (ejectFunction2)
+- Before: modal closed even on invalid code/password in newFlow path.
+- Now: verification request is awaited; callback executes only on success; modal remains active on failure (code cleared), preventing bypass.
+
+3) Enabled guard only in wallet/account user CRUD screens
+- Updated CRUD submit gate:
+  - src/components/global/CrudComponent.vue
+  - New optional prop: requireTwoFactor
+  - Create/Edit operation wrapped with runWithTwoFactor when prop enabled.
+- Updated delete/restore gate:
+  - src/components/global/TableComponent.vue
+  - New optional prop: requireTwoFactor
+  - Delete/Restore operation wrapped with runWithTwoFactor when prop enabled.
+
+4) Activated guard in user wallet/account views
+- src/views/user/wallet/WalletView.vue
+- src/views/user/Accounts/Bank/BankAccountView.vue
+- src/views/user/Accounts/Efecty/EfectyAccountCompanyView.vue
+- src/views/user/Accounts/Other/OtherAccountView.vue
+- Added `requireTwoFactor` to both CrudComponent and TableComponent in those views.
+
+Validation
+- npm run typecheck: SUCCESS
+- npm run build: SUCCESS
+
+Notes
+- No refactor of login 2FA flow.
+- Changes are additive/minimal and reusable for future sensitive actions by setting `requireTwoFactor` or calling runWithTwoFactor directly.

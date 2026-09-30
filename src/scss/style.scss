@@ -1,0 +1,63 @@
+// @use "vuetify/styles" with (
+//   $body-font-family: "DM Sans",
+//   $border-radius-root: 5px
+// );
+@use "vuetify/styles";
+//@import "vuetify/styles";
+//@import "vuetify/src/styles/styles.sass";
+@use "./variables" as *;
+@use "./override" as *;
+@use "./layout/container" as *;
+@use "./layout/sidebar" as *;
+@use "./layout/topbar" as *;
+@use "./pages/dashboards" as *;
+
+@font-face {
+    font-family: 'Schoolbell';
+    src: $font-hand;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: $font-thin;
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProximaNova';
+    src: $font-light;
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProximaNova';
+    src: $font-regular;
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProximaNova';
+    src: $font-semibold;
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProximaNova';
+    src: $font-bold;
+    font-weight: 700;
+    font-style: normal;
+}
+// @font-face {
+//     font-family: 'ProximaNovaMedium';
+//     src: $font-medium;
+//     font-weight: normal;
+//     font-style: normal;
+// }
+@font-face {
+    font-family: 'ProximaNova';
+    src: $font-black;
+    font-weight: 900;
+    font-style: normal;
+}

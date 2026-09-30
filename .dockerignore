@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+.git
+.gitignore
+node_modules
+dist
+coverage
+*.log
+*.zip
+docs
+src/**/*.spec.ts
+src/**/__tests__
