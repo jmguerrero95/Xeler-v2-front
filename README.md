@@ -1080,3 +1080,5 @@ The following literal `url.value` assignments identify resources used by shared 
 ---
 
 Documentation baseline: supplied frontend source snapshot, September 30, 2026. Update this guide alongside source and verified backend contracts.
+
+# Server: 192.241.134.111
